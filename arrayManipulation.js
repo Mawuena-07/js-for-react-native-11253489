@@ -31,9 +31,27 @@ function formatArrayString(names, resultOfArray) {
 
 const fruitNames = ['Apple', 'Orange', 'Melon', 'Pawpaw', 'Berry', 'Mango', 'Cashew'];
 const resultofnames = formatArrayString(fruitNames, resultOfArray);
-console.log(resultofnames);
+
+function createUserProfiles(fruitNames, resultofnames){
+    let profileArray = [];
+    let ID = 0;
+    function autoId(){
+        return ++ID;
+    }
+    for (let i = 0; i < fruitNames.length + 1; i++) {
+        let userProfile = {
+            id: autoId(),
+            originalName: fruitNames[i],
+            modifiedName: resultofnames[i]
+        };
+        profileArray.push(userProfile);
+    }
+
+    return profileArray;
+}
 
 
-
+const profiles = createUserProfiles(fruitNames, resultofnames);
+console.log(profiles);
 
 

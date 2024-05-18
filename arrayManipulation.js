@@ -1,19 +1,39 @@
 function processArray(array) {
-    let resultofarray = [];
+    let resultOfArray = [];
     array.forEach(number => {
         let square;
         let triple;
         if (number % 2 === 0) {
             square = number ** 2;
-            resultofarray.push(square);
+            resultOfArray.push(square);
         } else {
             triple = number * 3;
-            resultofarray.push(triple);
+            resultOfArray.push(triple);
         }
     });
-    return resultofarray;
+    return resultOfArray;
 }
 
 const arr = [2, 3, 4, 5, 6, 7];
-const resultofarray = processArray(arr);
-console.log(resultofarray);
+const resultOfArray = processArray(arr);
+
+function formatArrayString(names, resultOfArray) {
+    let resultofnames = [];
+    for (let i = 0; i < resultOfArray.length + 1; i++) {
+        let result = resultOfArray[i] % 2 === 0 ?
+            names[i].toUpperCase():
+        names[i].toLowerCase();
+        
+        resultofnames.push(result);
+    }
+    return resultofnames;
+}
+
+const fruitNames = ['Apple', 'Orange', 'Melon', 'Pawpaw', 'Berry', 'Mango', 'Cashew'];
+const resultofnames = formatArrayString(fruitNames, resultOfArray);
+console.log(resultofnames);
+
+
+
+
+

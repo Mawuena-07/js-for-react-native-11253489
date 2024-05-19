@@ -1,44 +1,27 @@
-function processArray(array) {
+export function processArray(array) {
     let resultOfArray = [];
     array.forEach(number => {
-        let square;
-        let triple;
         if (number % 2 === 0) {
-            square = number ** 2;
+            let square = number ** 2;
             resultOfArray.push(square);
         } else {
-            triple = number * 3;
+            let triple = number * 3;
             resultOfArray.push(triple);
         }
     });
     return resultOfArray;
-}
-
-const arr = [2, 3, 4, 5, 6];
-const resultOfArray = processArray(arr);
-
-function formatArrayString(names, resultOfArray) {
-    let resultofnames = [];
-    for (let i = 0; i < resultOfArray.length + 1; i++) {
+  }
+  
+  export function formatArrayString(names, resultOfArray) {
+    let resultOfNames = [];
+    let length = Math.min(names.length, resultOfArray.length); // Ensure we only iterate over the shortest array
+  
+    for (let i = 0; i < length; i++) {
         let result = resultOfArray[i] % 2 === 0 ?
-            names[i].toUpperCase():
-        names[i].toLowerCase();
-        
-        resultofnames.push(result);
+            names[i].toUpperCase() :
+            names[i].toLowerCase();
+        resultOfNames.push(result);
     }
-    return resultofnames;
+    return resultOfNames;
 }
-
-const fruitNames = ['Apple', 'Orange', 'Melon', 'Pawpaw', 'Berry', 'Mango'];
-const resultofnames = formatArrayString(fruitNames, resultOfArray);
-console.log(resultofnames);
-
-module.export = {processArray, formatArrayString};
-
-
-
-
-
-
-
 

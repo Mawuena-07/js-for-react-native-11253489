@@ -14,7 +14,7 @@ function processArray(array) {
     return resultOfArray;
 }
 
-const arr = [2, 3, 4, 5, 6, 7];
+const arr = [2, 3, 4, 5, 6];
 const resultOfArray = processArray(arr);
 
 function formatArrayString(names, resultOfArray) {
@@ -29,29 +29,16 @@ function formatArrayString(names, resultOfArray) {
     return resultofnames;
 }
 
-const fruitNames = ['Apple', 'Orange', 'Melon', 'Pawpaw', 'Berry', 'Mango', 'Cashew'];
+const fruitNames = ['Apple', 'Orange', 'Melon', 'Pawpaw', 'Berry', 'Mango'];
 const resultofnames = formatArrayString(fruitNames, resultOfArray);
+console.log(resultofnames);
 
-function createUserProfiles(fruitNames, resultofnames){
-    let profileArray = [];
-    let ID = 0;
-    function autoId(){
-        return ++ID;
-    }
-    for (let i = 0; i < fruitNames.length + 1; i++) {
-        let userProfile = {
-            id: autoId(),
-            originalName: fruitNames[i],
-            modifiedName: resultofnames[i]
-        };
-        profileArray.push(userProfile);
-    }
-
-    return profileArray;
-}
+module.export = {processArray, formatArrayString};
 
 
-const profiles = createUserProfiles(fruitNames, resultofnames);
-console.log(profiles);
+
+
+
+
 
 
